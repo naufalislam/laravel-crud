@@ -6,9 +6,14 @@ use Illuminate\Http\Request;
 
 class SiswaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data_siswa =\App\Siswa::All();
+        // dd($request->all());
+        if ($request->has('cari')) {
+            $data_siswa = \App\Siswa::where('nama','LIKE','%%'.$request->cari.'%%')->get();
+        }else{
+            $data_siswa =\App\Siswa::All();
+        } 
         return view('siswa.index',['data_siswa' => $data_siswa]);
     }
     public function create(Request $request)
@@ -35,4 +40,4 @@ class SiswaController extends Controller
         $siswa->delete($siswa);
         return redirect('/siswa')->with('sukses','Data Berhasil Dihapus');
     }
-}
+} 
