@@ -10,7 +10,7 @@
 					<h3 class="panel-title">Inputs</h3>
 				</div>
 				<div class="panel-body">
-                <form action="/siswa/{{$siswa->id}}/update" method="POST">
+                <form action="/siswa/{{$siswa->id}}/update" method="POST" enctype="multipart/form-data">
             {{csrf_field()}}
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nama</label>
@@ -31,7 +31,11 @@
                     <label for="exampleFormControlTextarea1" >Alamat</label>
                     <textarea name="alamat" class="form-control " id="exampleInputEmail1" rows="3"  >{{$siswa->alamat}}</textarea>
                 </div>
-
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1" >Avatar</label>
+                    <input name="avatar" type="file" class="form-control">
+                    
+                </div>
                 </div>
                     <div class="modal-footer">
                 <button type="submit" class="btn btn-warning">Update</button>
