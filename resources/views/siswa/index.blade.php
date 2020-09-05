@@ -40,10 +40,10 @@
                                     <tbody>
                                         @foreach($data_siswa as $siswa)
                                         <tr>
-                                            <td>{{$siswa->nama}}</td> 
-                                            <td>{{$siswa->jenis_kelamin}}</td>
-                                            <td>{{$siswa->agama}}</td>
-                                            <td>{{$siswa->alamat}}</td>
+                                            <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->nama}}</a></td>
+                                            <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->jenis_kelamin}}</a></td> 
+                                            <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->agama}}</a></td> 
+                                            <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->alamat}}</a></td>  
                                             <td>
                                                 <a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
                                                 <a href="/siswa/{{$siswa->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Mau Dihapus?')">Delete</a>
