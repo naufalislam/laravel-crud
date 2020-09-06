@@ -9,6 +9,16 @@
                     <div class="col-md-12"> 
                         <!-- TABLE HOVER -->
                         <div class="panel">
+                        <div class="col-lg-12">
+                        <h2 >Data Siswa</h2>
+                        <div class="top-right">
+                                <form class="navbar-form navbar-left" method="GET" action="/siswa">
+                                    <div class="input-group">
+                                        <input name="cari" type="text" value="" class="form-control" placeholder="Search">
+                                        <span class="input-group-btn"><button type="button" class="btn btn-primary">Search</button></span>
+                                    </div>
+                                </form>
+                                </div>
                             <div class="panel-heading">
                                 <div class="col-lg-12">                               
                                 @if(session('sukses'))
@@ -16,12 +26,13 @@
                                 {{session('sukses')}}
                                 </div>
                                 @endif
+                        </div>
                                 </div>
-                                <h3 class="panel-title">Data Siswa</h3>
                                 <div class="right">
                                     <!-- Button trigger modal -->
-                                    <button  type="button" class="btn " data-toggle="modal" data-target="#exampleModal">
-                                    <i class="lnr lnr-plus-circle"></i>
+                                    <button  type="button" class="btn  btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    Tambah Siswa
+                                    <!-- <i class="lnr lnr-plus-circle"></i> -->
                                     </button>
                                 </div>
                                
