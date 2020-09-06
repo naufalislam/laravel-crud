@@ -24,7 +24,6 @@ class SiswaController extends Controller
             'jenis_kelamin' => 'required',
             'agama' => 'required',
             'avatar' => 'mimes:jpg,png'
-            
         ]);
         \App\Siswa::create($request->all());
         if ($request->hasFile('avatar')) {
