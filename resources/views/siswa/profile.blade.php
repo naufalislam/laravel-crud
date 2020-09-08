@@ -61,7 +61,10 @@
 <div class="profile-right">
 
 
-
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Tambah Nilai
+</button>
 
 <!-- TABBED CONTENT -->
 <div class="custom-tabs-line tabs-line-bottom left-aligned">
@@ -103,5 +106,41 @@
 </div>
 <!-- END MAIN CONTENT -->
 </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Nilai</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                    <form action="/siswa/{{$siswa->id}}/addnilai" method="POST" enctype="multipart/form-data">
+                    {{csrf_field()}}
+                        <div class="form-group">
+                            <label for="mapel">Mata Pelajaran</label>
+                            <select class="form-control" id="mapel" name="mapel">
+                           @foreach($matapelajaran as $mp)
+                                <option value="{{$mp->id}}">{{$mp->nama}}</option>
+                           @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nilai</label>
+                            <input name="nilai" type="text" class="form-control" id="nilai">
+                        
+                        </div>
+                    </div>
+                    <div class="modal-footer">         
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </form>
+            </div>
+            </div>
+        </div>
+        </div>
 @stop
 
