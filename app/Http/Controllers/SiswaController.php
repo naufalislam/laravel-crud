@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class SiswaController extends Controller
@@ -69,7 +70,10 @@ class SiswaController extends Controller
     {
         // dd($request->all());
         $siswa = \App\Siswa::find($idsiswa);
-        $siswa->mapel()->attach($request->mapel,['nilai' => $request->nilai]);
+        if ($siswa->mapel()->where('mapel_id',$request->mapel)->exists()) {
+            return redirect('siswa/'.$idsiswa.'/profile')->with('error','Data nilai sudah ada');
+        }
+        $siswa->mapel()->attach($request->mapel,['nilai' => $request->nilai,'update_at' => Carbon::now()]);
         
 
         return redirect('siswa/'.$idsiswa.'/profile')->with('sukses','Data nilai berhasil dimasukan');
