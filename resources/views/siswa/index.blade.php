@@ -86,40 +86,33 @@
                 
             <form action="/siswa/create" method="POST" enctype="multipart/form-data">
             {{csrf_field()}}
-                <div class="form-group{{$errors->has('nama') ? 'has-error' : ''}}">
+                <div class="form-group">
                     <label for="exampleInputEmail1">Nama</label>
-                    <input name="nama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{old('nama')}}">
-                    @if($errors->has('nama'))
-                        <span class="help-block">{{$errors->first('nama')}}</span>
-                    @endif
+                    <input name="nama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                   
                 </div>
-                <div class="form-group{{$errors->has('jenis_kelamin') ? 'has-error' : ''}}">
+                <div class="form-group">
                     <label for="exampleFormControlSelect1">Jenis Kelamin</label>
                     <select name="jenis_kelamin" class="form-control" id="exampleInputEmail1">
-                    <option value="Laki-Laki" {{(old('jenis_kelamin') == 'Laki-Laki') ? 'selected' : ''}}>Laki-Laki</option>
-                    <option value="Perempuan" {{(old('jenis_kelamin') == 'Perempuan') ? 'selected' : ''}}>Perempuan </option>
-                    @if($errors->has('jenis_kelamin'))
-                        <span class="help-block">{{$errors->first('jenis_kelamin')}}</span>
-                    @endif
+                    <option value="Laki-Laki">Laki-Laki</option>
+                    <option value="Perempuan">Perempuan </option>
                     </select>
                 </div>
-                <div class="form-group{{$errors->has('agama') ? 'has-error' : ''}}">
+                <div class="form-group">
                     <label for="exampleInputPassword1">Agama</label>
-                    <input name="agama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  value="{{old('agama')}}">
-                    @if($errors->has('agama'))
-                        <span class="help-block">{{$errors->first('agama')}}</span>
-                    @endif
+                    <input name="agama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                    
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Alamat</label>
-                    <textarea name="alamat" class="form-control" id="exampleInputEmail1" rows="3" >{{old('alamat')}}</textarea>
+                    <textarea name="alamat" class="form-control" id="exampleInputEmail1" rows="3" ></textarea>
                 </div>
-                <div class="form-group{{$errors->has('avatar') ? 'has-error' : ''}}">
+                <div class="form-group">
                     <label for="exampleFormControlTextarea1" >Avatar</label>
                     <input name="avatar" type="file" class="form-control">
-                    @if($errors->has('avatar'))
+                    <!-- @if($errors->has('avatar'))
                         <span class="help-block">{{$errors->first('avatar')}}</span>
-                    @endif
+                    @endif -->
                 </div>
                 </div>
                     <div class="modal-footer">

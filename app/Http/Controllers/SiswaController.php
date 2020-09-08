@@ -18,14 +18,14 @@ class SiswaController extends Controller
     }
     public function create(Request $request)
     {
-        $this->validate($request,[
-            'nama' => 'required' ,
-            'email' => 'required|email|unique::users',
-            'jenis_kelamin' => 'required',
-            'agama' => 'required',
-            'avatar' => 'mimes:jpg,png'
-        ]);
-        \App\Siswa::create($request->all());
+        // $this->validate($request,[
+        //     'nama' => 'required' ,
+        //     'email' => 'required|email|unique::users',
+        //     'jenis_kelamin' => 'required',
+        //     'agama' => 'required',
+        //     'avatar' => 'mimes:jpg,png'
+        // ]);
+        $siswa = \App\Siswa::create($request->all());
         if ($request->hasFile('avatar')) {
             $request->file('avatar')->move('images/',$request->file('avatar')->getClientOriginalName());
             $siswa->avatar = $request->file('avatar')->getClientOriginalName();
@@ -33,6 +33,7 @@ class SiswaController extends Controller
         }
         return redirect('/siswa')->with('sukses','Data Berhasil Diinput');
     }
+    
     public function edit($id)
     {
         $siswa = \App\siswa::find($id);
