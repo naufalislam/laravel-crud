@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-
     <div class="main">
         <div class="main-content">
             <div class="container-fluid">
@@ -41,10 +40,11 @@
                                 <table class="table table-hover">
                                 <thead class="thead-dark">
                                         <tr>
-                                        <th scope="col">Nama</th>
-                                        <th scope="col">Jenis Kelamin</th>
-                                        <th scope="col">Agama</th>
-                                        <th scope="col">Alamat</th>
+                                            <th scope="col">Nama</th>
+                                            <th scope="col">Jenis Kelamin</th>
+                                            <th scope="col">Agama</th>
+                                            <th scope="col">Alamat</th>
+                                            <th scope="col">Rata-Rata</th>
                                         <th scope="col">Aksi</th>
                                         </tr>
                                     </thead>
@@ -55,6 +55,7 @@
                                             <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->jenis_kelamin}}</a></td> 
                                             <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->agama}}</a></td> 
                                             <td><a href="/siswa/{{$siswa->id}}/profile">{{$siswa->alamat}}</a></td>  
+                                            <td>{{$siswa->rataRataNilai()}}</td>
                                             <td>
                                                 <a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
                                                 <a href="/siswa/{{$siswa->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Mau Dihapus?')">Delete</a>

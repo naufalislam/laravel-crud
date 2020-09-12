@@ -28,7 +28,7 @@
             Mata Pelajaran<span>{{$siswa->mapel->count()}}</span>
             </div>
             <div class="col-md-4 stat-item">
-            Kelas<span>12 D</span>
+            Nilai Rata-Rata<span>{{$siswa->rataRataNilai()}}</span>
             </div>
             <div class="col-md-4 stat-item">
             Semester<span>Ganjil</span>
@@ -87,7 +87,6 @@
 </div>
 <div class="tab-content">
         <div class="panel">
-
                         <div class="panel-body">
                             <table class="table table-striped">
                                 <thead>
