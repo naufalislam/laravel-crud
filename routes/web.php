@@ -31,4 +31,5 @@ Route::group(['middleware' => 'auth'],function(){
     Route::get('/siswa/{id}/profile','SiswaController@profile');
     Route::post('/siswa/{id}/addnilai','SiswaController@addnilai');
     Route::get('/siswa/{id}/{idmapel}/deletenilai','SiswaController@deletenilai');
+    Route::get('/guru/{id}/profile','GuruController@profile');
 });
