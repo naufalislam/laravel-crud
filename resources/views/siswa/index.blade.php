@@ -11,13 +11,14 @@
                         <div class="col-lg-12">
                         <h2 >Data Siswa</h2>
                         <div class="top-right">
-                                <form class="navbar-form navbar-left" method="GET" action="/siswa">
-                                    <div class="input-group">
-                                        <input name="cari" type="text" value="" class="form-control" placeholder="Search">
-                                        <span class="input-group-btn"><button type="button" class="btn btn-primary">Search</button></span>
-                                    </div>
-                                </form>
+                            <form class="navbar-form navbar-left" method="GET" action="/siswa">
+                                <div class="input-group">
+                                    <input name="cari" type="text" value="" class="form-control" placeholder="Search">
+                                    <span class="input-group-btn"><button type="button" class="btn btn-primary">Search</button></span>
                                 </div>
+                            </form>
+                            </div>
+                        
                             <div class="panel-heading">
                                 <div class="col-lg-12">                               
                                 @if(session('sukses'))
@@ -66,6 +67,10 @@
                                 </table>
                             </div>
                         </div>
+                                        <div class="right">
+                                            <a href="/siswa/exportExcel" class="btn btn-sm btn-primary">Export Excel</a>
+                                            <a href="/siswa/exportPdf" class="btn btn-sm btn-primary">Export Pdf</a>
+                                        </div>
                         <!-- END TABLE HOVER -->
                         
                     </div>

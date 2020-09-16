@@ -33,4 +33,9 @@ class Siswa extends Model
         }
         return round($total/$hitung);
     }
+
+    public function namaLengkap()
+    {
+        return $this->nama;
+    }
 }
