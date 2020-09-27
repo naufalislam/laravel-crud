@@ -17,7 +17,7 @@
 ### LINUX
 -   Ke folder /lampp/htdocs 
 -   Buka Terminal dengan klik kanan open terminal
--   ketik "git clone https://github.com/mirza-alim-m/laravel2020-B-G1.git" pada terminal
+-   ketik "git clone https://github.com/naufalislam/laravel-crud.git" pada terminal
 -   Ubah nama folder menjadi sintak    
 -   Masuk ke folder project lewat cmd. (cd sintak) *tanpa kurung
 -   Ubah nama file .env.example menjadi .env
